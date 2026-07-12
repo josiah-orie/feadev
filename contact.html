@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact AFEDEV — general inquiries, academy registration, partnerships, media, and careers." />
+    <title>Contact — AFEDEV</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="contact">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title display-5">Contact Us</h1>
+        <p class="page-hero-lead lead">
+          Reach out for academy enrollment, partnerships, events, media inquiries, careers, or
+          general questions.
+        </p>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <h2 class="section-title">Contact Details</h2>
+              <div class="contact-cards">
+                <div class="contact-card">
+                  <div class="contact-label">Company</div>
+                  <div class="contact-value">American Football Elite Development Ltd (AFEDEV)</div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value"><a href="mailto:football@feadev.com">football@feadev.com</a></div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-label">Media</div>
+                  <div class="contact-value"><a href="mailto:football@feadev.com">football@feadev.com</a></div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-value">+234 (0) XXX XXX XXXX</div>
+                  <div class="small text-muted mt-1">Replace with official phone when available.</div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-label">Office address</div>
+                  <div class="contact-value">Lagos, Nigeria</div>
+                  <div class="small text-muted mt-1">Full headquarters address to be provided.</div>
+                </div>
+                <div class="contact-card">
+                  <div class="contact-label">Social media</div>
+                  <div class="footer-social mt-2">
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">X</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="form-card">
+                <h3 class="h5 mb-3">Send a message</h3>
+                <form id="contactForm" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="name">Full name</label>
+                      <input class="form-control" id="name" name="name" type="text" autocomplete="name" required />
+                      <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="email">Email</label>
+                      <input class="form-control" id="email" name="email" type="email" autocomplete="email" required />
+                      <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="phone">Phone</label>
+                      <input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="org">Organization</label>
+                      <input class="form-control" id="org" name="org" type="text" autocomplete="organization" />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="interest">Inquiry type</label>
+                      <select class="form-select" id="interest" name="interest" required>
+                        <option value="" selected disabled>Choose one</option>
+                        <option>General inquiry</option>
+                        <option>Academy registration</option>
+                        <option>Partnership / sponsorship</option>
+                        <option>Events & hosting</option>
+                        <option>Media & press</option>
+                        <option>Careers & internships</option>
+                        <option>Volunteering</option>
+                      </select>
+                      <div class="invalid-feedback">Please choose an inquiry type.</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="message">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                      <div class="invalid-feedback">Please enter a message.</div>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
+                      <button type="submit" class="btn btn-brand px-4">Send message</button>
+                      <div id="formStatus" class="small text-muted" role="status" aria-live="polite"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <h2 class="section-title mb-3">Office Location</h2>
+          <div class="img-placeholder map-placeholder" role="img" aria-label="Map placeholder">
+            <span class="img-placeholder-icon" aria-hidden="true">🗺️</span>
+            <span class="img-placeholder-type">Google Map embed</span>
+            <p class="img-placeholder-desc">
+              Embedded map of AFEDEV headquarters — replace with Google Maps iframe when office
+              address is confirmed. Recommended size: full container width, min 280px height.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <button type="button" class="btn btn-dark btn-to-top shadow" id="toTop" aria-label="Back to top">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

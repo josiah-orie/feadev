@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register as an athlete on the AFEDEV platform to access elite training programs and development pathways." />
+    <title>Athlete Registration — AFEDEV</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="register-athlete">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Athlete Registration</li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title display-5">Athlete Registration</h1>
+        <p class="page-hero-lead lead">
+          Create your athlete account to access elite training programs, development pathways, and scouting opportunities with AFEDEV.
+        </p>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+              <div class="form-card">
+                <div id="successAlert" class="alert alert-success d-none" aria-live="polite"></div>
+                <div id="errorAlert" class="alert alert-danger d-none" aria-live="polite"></div>
+
+                <form id="registrationForm" class="registration-form" novalidate>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      maxlength="254"
+                      autocomplete="email"
+                      required
+                    />
+                    <div class="invalid-feedback" aria-live="polite"></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      placeholder="+234..."
+                      autocomplete="tel"
+                      required
+                    />
+                    <div class="invalid-feedback" aria-live="polite"></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      minlength="8"
+                      maxlength="128"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <div class="invalid-feedback" aria-live="polite"></div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      minlength="8"
+                      maxlength="128"
+                      autocomplete="new-password"
+                      required
+                    />
+                    <div class="invalid-feedback" aria-live="polite"></div>
+                  </div>
+
+                  <button type="submit" class="btn btn-brand w-100">Register <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span></button>
+                </form>
+
+                <p class="mt-3 text-center">
+                  <a href="/register-coach.html">Register as a Coach instead</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
