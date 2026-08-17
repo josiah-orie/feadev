@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="AFEDEV events — football combine, coaching workshops, community outreach days, school clinics, and youth bowl games." />
+  <meta property="og:image" content="/images/logo-new.png" />
+  <meta name="twitter:image" content="/images/logo-new.png" />
   <title>Events — AFEDEV</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +22,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="site-header"></div>
 
-  <header class="page-hero">
+  <header class="page-hero events-hero">
     <div class="container">
       <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb">
@@ -40,58 +42,13 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title mb-4">Upcoming Events</h2>
-        <div class="row g-3">
-          <div class="col-lg-6">
-            <article class="event-card program-page-card p-4 h-100" id="wheelchair-training">
-              <div class="mb-3"
-                style="height: 180px; overflow: hidden; border-radius: var(--af-radius); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <img src="/images/whc/event-banner-1.jpeg" class="w-100 h-100 object-fit-cover"
-                  alt="Wheelchair American Football Training" />
-              </div>
-              <h3 class="h5 mb-2">Wheelchair Football Training Program</h3>
-              <p class="text-white-75 mb-2">Date: 10th July, 2026 • Time: 12:00 Noon • Venue: National Stadium</p>
-              <p class="mb-3 text-muted">An inclusive training session designed for para-athletes. Learn wheelchair
-                handling, position fundamentals, tactical team strategies, and build confidence under certified coaches.
-              </p>
-              <a class="btn btn-brand btn-sm" href="/register-athlete.html">Register to attend</a>
-            </article>
-          </div>
-          <div class="col-lg-6">
-            <article class="event-card program-page-card p-4 h-100" id="combine">
-              <div class="img-placeholder mb-3" style="min-height: 160px" role="img"
-                aria-label="Combine event placeholder">
-                <span class="img-placeholder-type">Event banner</span>
-                <p class="img-placeholder-desc mb-0">Annual AFEDEV Football Combine — action + metrics testing</p>
-              </div>
-              <h3 class="h5 mb-2">Annual AFEDEV Football Combine</h3>
-              <p class="text-white-75 mb-2">Date: TBA • Location: TBA</p>
-              <p class="mb-3 text-muted">Athletes showcase speed, agility, strength, and position skills before scouts
-                and recruiters.</p>
-              <a class="btn btn-brand btn-sm" href="/contact.html">Register interest</a>
-            </article>
-          </div>
-          <div class="col-lg-6">
-            <article class="event-card program-page-card p-4 h-100">
-              <h3 class="h5 mb-2">Coaching Education Workshops</h3>
-              <p class="text-white-75 mb-2">Rolling dates • Multiple venues</p>
-              <p class="mb-3 text-muted">Certification-oriented workshops for coaches, PE teachers, and sports
-                educators.</p>
-              <a class="btn btn-outline-light btn-sm" href="/programs.html#coaching-education">View curriculum</a>
-            </article>
-          </div>
-          <div class="col-md-6">
-            <article class="event-card program-page-card p-4 h-100">
-              <h3 class="h5 mb-2">Community Outreach Football Days</h3>
-              <p class="mb-0 text-muted">Free introductory sessions, equipment demos, and family-friendly activities in
-                partner communities.</p>
-            </article>
-          </div>
-          <div class="col-md-6">
-            <article class="event-card program-page-card p-4 h-100">
-              <h3 class="h5 mb-2">School Clinics & Youth Bowl Games</h3>
-              <p class="mb-0 text-muted">School-based clinics and flag/tackle bowl formats that build participation and
-                school pride.</p>
-            </article>
+        <div class="row g-3" id="eventsContainer">
+          <!-- Events loaded dynamically from API -->
+          <div class="col-12 text-center py-5">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Loading events...</span>
+            </div>
+            <p class="text-muted mt-3">Loading events...</p>
           </div>
         </div>
       </div>

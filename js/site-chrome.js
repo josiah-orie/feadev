@@ -47,8 +47,8 @@ function renderNav(activePage) {
         <a class="navbar-brand d-flex align-items-center gap-2" href="/">
           <img
             class="brand-logo"
-            src="/images/logo.jpeg"
-            width="32"
+            src="/images/logo-new.png"
+            width="auto"
             height="32"
             alt="AFEDEV logo"
             loading="eager"
@@ -93,8 +93,8 @@ function renderFooter() {
             <div class="d-flex align-items-center gap-2 mb-3">
               <img
                 class="brand-logo sm"
-                src="/images/logo.jpeg"
-                width="28"
+                src="/images/logo-new.png"
+                width="auto"
                 height="28"
                 alt="AFEDEV logo"
                 loading="lazy"

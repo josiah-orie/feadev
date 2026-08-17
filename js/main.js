@@ -3,6 +3,8 @@
 import { initSiteChrome } from './site-chrome.js'
 import { initRegistration } from './registration.js'
 import { initVerifyEmail } from './verify-email.js'
+import { initEventRegistration } from './event-registration.js'
+import { initEventsPage, initHeroEventLink } from './events.js'
 
 initSiteChrome()
 
@@ -100,4 +102,19 @@ if (page === 'register-athlete' || page === 'register-coach') {
 // Verify email page setup
 if (page === 'verify-email') {
   initVerifyEmail()
+}
+
+// Event registration page setup
+if (page === 'event-registration') {
+  initEventRegistration()
+}
+
+// Events page setup
+if (page === 'events') {
+  initEventsPage()
+}
+
+// Home page: update hero event link with real event ID
+if (page === 'home') {
+  initHeroEventLink()
 }

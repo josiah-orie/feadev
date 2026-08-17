@@ -152,3 +152,100 @@ export async function registerUser(role, payload) {
     return { ok: false, data: null, error: null, errorType: 'network' }
   }
 }
+
+/**
+ * Registers a guest (non-authenticated user) for an event.
+ * @param {string} eventId - The UUID of the event to register for
+ * @param {{ name: string, email: string, phone?: string }} payload
+ * @returns {Promise<ApiResponse>}
+ */
+export async function registerGuest(eventId, { name, email, phone }) {
+  const url = `${API_BASE}/events/${eventId}/register/guest`
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
+
+  const body = { name, email }
+  if (phone && phone.trim()) {
+    body.phone = phone.trim()
+  }
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    })
+
+    clearTimeout(timeoutId)
+
+    if (response.status === 201) {
+      const data = await response.json()
+      return { ok: true, data, error: null, errorType: null }
+    }
+
+    const errorBody = await response.json()
+    return { ok: false, data: null, error: errorBody, errorType: 'api' }
+  } catch (err) {
+    clearTimeout(timeoutId)
+
+    if (err.name === 'AbortError') {
+      return { ok: false, data: null, error: null, errorType: 'timeout' }
+    }
+
+    return { ok: false, data: null, error: null, errorType: 'network' }
+  }
+}
+
+
+/**
+ * Fetches all events from the API. Public endpoint — no auth required.
+ * @param {Object} [params] - Optional query parameters
+ * @param {string} [params.status] - Filter by event status
+ * @param {string} [params.eventType] - Filter by event type
+ * @param {string} [params.sortBy] - Sort field (default: startDate)
+ * @param {string} [params.sortDir] - Sort direction: asc or desc
+ * @param {number} [params.page] - Page number (zero-based)
+ * @param {number} [params.size] - Page size (max 100)
+ * @returns {Promise<ApiResponse>}
+ */
+export async function fetchEvents(params = {}) {
+  const query = new URLSearchParams()
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== undefined && value !== null && value !== '') {
+      query.set(key, String(value))
+    }
+  }
+  const queryStr = query.toString()
+  const url = `${API_BASE}/events${queryStr ? '?' + queryStr : ''}`
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS)
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' },
+      signal: controller.signal,
+    })
+
+    clearTimeout(timeoutId)
+
+    if (response.ok) {
+      const data = await response.json()
+      return { ok: true, data, error: null, errorType: null }
+    }
+
+    const errorBody = await response.json().catch(() => null)
+    return { ok: false, data: null, error: errorBody, errorType: 'api' }
+  } catch (err) {
+    clearTimeout(timeoutId)
+
+    if (err.name === 'AbortError') {
+      return { ok: false, data: null, error: null, errorType: 'timeout' }
+    }
+
+    return { ok: false, data: null, error: null, errorType: 'network' }
+  }
+}

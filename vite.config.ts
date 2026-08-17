@@ -23,6 +23,8 @@ export default defineConfig({
         registerCoach: resolve(__dirname, 'register-coach.html'),
         verifyEmail: resolve(__dirname, 'verify-email.html'),
         wheelchairArticle: resolve(__dirname, 'articles/wheelchair-football.html'),
+        theFirstSnap: resolve(__dirname, 'articles/the-first-snap.html'),
+        eventRegistration: resolve(__dirname, 'event-registration.html'),
       },
     },
   },

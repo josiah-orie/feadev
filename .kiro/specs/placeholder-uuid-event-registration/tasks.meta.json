@@ -1,0 +1,123 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Write bug condition exploration test": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810395
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988816762
+      }
+    ],
+    "2. Write preservation property tests (BEFORE implementing fix)": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810499
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988817603
+      }
+    ],
+    "3.1 Add `isValidUUID()` utility function to `js/event-registration.js`": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810631
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988828399
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988916983
+      }
+    ],
+    "3.2 Add UUID format validation gate in `initEventRegistration()` after existing `!eventId` check": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810707
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988928815
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989028193
+      }
+    ],
+    "3.3 Replace placeholder-uuid link in `events.html` with disabled button": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810792
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989040070
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989224066
+      }
+    ],
+    "3.4 Verify bug condition exploration test now passes": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810878
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989243744
+      }
+    ],
+    "3.5 Verify preservation tests still pass": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988810964
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989260630
+      }
+    ],
+    "4. Checkpoint - Ensure all verifications pass": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786988811041
+      },
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989270961
+      }
+    ],
+    "3. Fix for invalid UUID eventId reaching API and causing 500 error": [
+      {
+        "executionId": "98d97509-6bcd-4732-8c2b-92f72149d6d6",
+        "chatSessionId": "sess_19627a6c-e1d5-47a8-9b25-f3eceb280641",
+        "timestamp": 1786989260709
+      }
+    ]
+  }
+}

@@ -91,18 +91,18 @@ main a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
   border-radius: 4px;
 }
 .brand-logo {
-  width: 32px;
   height: 32px;
-  border-radius: 10px;
-  object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 .brand-logo.sm {
-  width: 28px;
   height: 28px;
-  border-radius: 9px;
+  width: auto;
+  border-radius: 7px;
 }
 .brand-sep {
   opacity: 0.35;
@@ -987,4 +987,190 @@ main a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Carousel */
+.hero-carousel {
+  position: relative;
+  overflow: clip;
+  background-color: #060810;
+}
+.hero-carousel .hero-slide {
+  padding: clamp(3.5rem, 7vw, 5.8rem) 0 3.5rem;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-carousel .hero-slide.active,
+.hero-carousel .hero-slide.carousel-item-next,
+.hero-carousel .hero-slide.carousel-item-prev {
+  display: flex;
+  align-items: center;
+}
+.hero-slide--snap {
+  background-image:
+    linear-gradient(105deg, rgba(6, 8, 16, 0.94) 0%, rgba(6, 8, 16, 0.78) 38%, rgba(6, 8, 16, 0.45) 72%, rgba(6, 8, 16, 0.35) 100%),
+    url('/images/whc/hero-banner-1.jpeg');
+}
+.hero-slide--main {
+  background-image:
+    linear-gradient(105deg, rgba(6, 8, 16, 0.94) 0%, rgba(6, 8, 16, 0.78) 38%, rgba(6, 8, 16, 0.45) 72%, rgba(6, 8, 16, 0.35) 100%),
+    url('/images/hero-banner-1.jpeg');
+}
+.hero-slide--exhibition {
+  background-image:
+    linear-gradient(105deg, rgba(6, 8, 16, 0.92) 0%, rgba(6, 8, 16, 0.74) 38%, rgba(6, 8, 16, 0.40) 72%, rgba(6, 8, 16, 0.30) 100%),
+    url('/images/events/wheelchair_exh/hero-banner.jpeg');
+}
+.events-hero {
+  background-image:
+    linear-gradient(105deg, rgba(6, 8, 16, 0.92) 0%, rgba(6, 8, 16, 0.74) 38%, rgba(6, 8, 16, 0.40) 72%, rgba(6, 8, 16, 0.30) 100%),
+    url('/images/whc/hero-banner-2.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+.hero-slide-img {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--af-radius);
+  box-shadow: var(--af-shadow);
+  max-height: 360px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Carousel indicators — small brand-colored dots */
+.hero-carousel .carousel-indicators {
+  margin-bottom: 1.25rem;
+}
+.hero-carousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+  transition: background 200ms ease, transform 200ms ease;
+}
+.hero-carousel .carousel-indicators .active {
+  background: linear-gradient(135deg, var(--af-brand), var(--af-brand2));
+  border-color: transparent;
+  transform: scale(1.2);
+}
+
+/* Carousel prev/next arrows — subtle for dark theme */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.7;
+  transition: opacity 180ms ease, background 180ms ease;
+}
+.hero-carousel .carousel-control-prev {
+  left: 1rem;
+}
+.hero-carousel .carousel-control-next {
+  right: 1rem;
+}
+.hero-carousel .carousel-control-prev:hover,
+.hero-carousel .carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hero glow positioned on carousel wrapper */
+.hero-carousel .hero-glow {
+  position: absolute;
+  z-index: 0;
+  inset: -30% -20% auto -20%;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(31, 162, 255, 0.22), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Responsive: hide arrows on small screens, stack content */
+@media (max-width: 767.98px) {
+  .hero-carousel .carousel-control-prev,
+  .hero-carousel .carousel-control-next {
+    display: none;
+  }
+  .hero-carousel .hero-slide {
+    min-height: 420px;
+    padding: 2.5rem 0 3rem;
+  }
+}
+
+/* Hero excerpt — eye-catching pull-quote style on carousel slide */
+.hero-excerpt {
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid;
+  border-image: linear-gradient(180deg, var(--af-brand), var(--af-brand2)) 1;
+  background: linear-gradient(135deg, rgba(31, 162, 255, 0.08), rgba(34, 197, 94, 0.04));
+  border-radius: 0 var(--af-radius) var(--af-radius) 0;
+  backdrop-filter: blur(4px);
+}
+.hero-excerpt-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+.hero-excerpt-text em {
+  font-style: normal;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--af-brand), var(--af-brand2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-excerpt-author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--af-muted2);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Exhibition Game — Featured Event Card ===== */
+.event-featured {
+  position: relative;
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, var(--af-brand), var(--af-brand2)) 1;
+}
+.event-featured .statement-kicker {
+  background: linear-gradient(135deg, rgba(31, 162, 255, 0.12), rgba(34, 197, 94, 0.10));
+  border-color: rgba(31, 162, 255, 0.25);
+  color: var(--af-brand);
+}
+@media (max-width: 767.98px) {
+  .event-featured .mb-3[style*="height: 240px"] {
+    height: 160px !important;
+  }
+}
+
+/* ===== Event Registration Page ===== */
+.event-registration-details {
+  border-left: 3px solid transparent;
+  border-image: linear-gradient(180deg, var(--af-brand), var(--af-brand2)) 1;
+}
+.event-registration-details .statement-kicker {
+  font-size: 0.7rem;
+}
+.event-registration-details ul li {
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
