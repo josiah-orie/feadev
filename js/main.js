@@ -5,6 +5,7 @@ import { initRegistration } from './registration.js'
 import { initVerifyEmail } from './verify-email.js'
 import { initEventRegistration } from './event-registration.js'
 import { initEventsPage, initHeroEventLink } from './events.js'
+import { initAcademyRegistration } from './academy-registration.js'
 
 initSiteChrome()
 
@@ -107,6 +108,11 @@ if (page === 'verify-email') {
 // Event registration page setup
 if (page === 'event-registration') {
   initEventRegistration()
+}
+
+// Academy registration page setup
+if (page === 'academy-registration') {
+  initAcademyRegistration()
 }
 
 // Events page setup

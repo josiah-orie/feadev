@@ -16,6 +16,7 @@ const NAV_ITEMS = [
     dropdown: [
       { label: 'Athlete Registration', href: '/register-athlete.html' },
       { label: 'Official Registration', href: '/register-coach.html' },
+      { label: 'Academy Application', href: '/academy-registration.html' },
     ]
   },
 ]
@@ -116,6 +117,7 @@ function renderFooter() {
               <li><a href="/about-us.html">About Us</a></li>
               <li><a href="/programs.html">Programs</a></li>
               <li><a href="/academy.html">Training Academy</a></li>
+              <li><a href="/academy-registration.html">Academy Application</a></li>
               <li><a href="/events.html">Events</a></li>
               <li><a href="/media.html">Media Hub</a></li>
             </ul>

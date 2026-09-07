@@ -33,6 +33,12 @@ describe('Navigation dropdown - Register', () => {
     expect(link.textContent).toBe('Coach Registration')
   })
 
+  it('contains a link to /academy-registration.html with text "Academy Application"', () => {
+    const link = document.querySelector('.dropdown-menu a[href="/academy-registration.html"]')
+    expect(link).not.toBeNull()
+    expect(link.textContent).toBe('Academy Application')
+  })
+
   it('uses Bootstrap dropdown classes (.dropdown, .dropdown-toggle, .dropdown-menu)', () => {
     const dropdown = document.querySelector('.dropdown')
     expect(dropdown).not.toBeNull()

@@ -3,7 +3,7 @@
  * Fetches events from the API and renders them dynamically.
  */
 
-import { fetchEvents } from './api-client.js'
+import { fetchEvents, getImageUrl } from './api-client.js'
 
 /**
  * Formats a date string (yyyy-MM-dd) to a readable format.
@@ -104,7 +104,7 @@ function renderEventCard(event, featured = false) {
     ? `${formatTime(event.startTime)} – ${formatTime(event.endTime)}`
     : formatTime(event.startTime) || ''
 
-  const imageUrl = event.eventImage || event.imagePath || ''
+  const imageUrl = event.imagePath ? getImageUrl(event.imagePath) : event.eventImage || ''
   const imageHtml = imageUrl
     ? `<div class="mb-3" style="height: ${featured ? '240px' : '180px'}; overflow: hidden; border-radius: var(--af-radius); border: 1px solid rgba(255, 255, 255, 0.1);">
         <img src="${escapeHtml(imageUrl)}" class="w-100 h-100 object-fit-cover" alt="${name}" />

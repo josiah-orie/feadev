@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Apply to the AFEDEV Football Academy — individual athletes and institutions can register for elite American football development." />
+    <meta property="og:image" content="/images/academy-logo.jpeg" />
+    <meta name="twitter:image" content="/images/academy-logo.jpeg" />
+    <title>American Football Academy Application — AFEDEV</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-page="academy-registration">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/academy.html">Training Academy</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Apply</li>
+          </ol>
+        </nav>
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img
+            src="/images/academy-logo.jpeg"
+            alt="AFEDEV Football Academy logo"
+            class="academy-reg-logo"
+            width="72"
+            height="72"
+            loading="eager"
+            decoding="async"
+          />
+          <div>
+            <h1 class="page-hero-title display-5 mb-1">Academy Application</h1>
+            <p class="page-hero-lead lead mb-0">
+              Apply to the American Football Academy as an individual athlete or as an institution.
+            </p>
+          </div>
+        </div>
+        <p class="text-white-75 mb-0">
+          Applications are reviewed by our team. You'll receive an email once a decision is made.
+          No account or login is required.
+        </p>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="form-card">
+                <div id="successAlert" class="alert alert-success d-none" role="status" aria-live="polite"></div>
+                <div id="errorAlert" class="alert alert-danger d-none" role="alert" aria-live="polite"></div>
+
+                <ul class="nav nav-tabs mb-4" id="applicantTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="individual-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#individual-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="individual-pane"
+                      aria-selected="true"
+                    >
+                      Individual
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="institution-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#institution-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="institution-pane"
+                      aria-selected="false"
+                    >
+                      Institution
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="applicantTabContent">
+                  <!-- Individual application -->
+                  <div class="tab-pane fade show active" id="individual-pane" role="tabpanel" aria-labelledby="individual-tab" tabindex="0">
+                    <p class="text-muted mb-4">
+                      For athletes applying on their own behalf. Ages 5–60 are accepted.
+                    </p>
+                    <form id="individualForm" class="registration-form" novalidate>
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label for="ind-fullName" class="form-label">Full name</label>
+                          <input type="text" class="form-control" id="ind-fullName" name="fullName" autocomplete="name" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-3">
+                          <label for="ind-age" class="form-label">Age</label>
+                          <input type="number" class="form-control" id="ind-age" name="age" min="5" max="60" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-3">
+                          <label for="ind-location" class="form-label">Location</label>
+                          <select class="form-select" id="ind-location" name="location" required>
+                            <option value="" selected disabled>Choose…</option>
+                            <option value="ABUJA">Abuja</option>
+                            <option value="LAGOS">Lagos</option>
+                          </select>
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="ind-email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="ind-email" name="email" maxlength="254" autocomplete="email" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="ind-phone" class="form-label">Phone</label>
+                          <input type="tel" class="form-control" id="ind-phone" name="phone" placeholder="+234…" autocomplete="tel" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                      </div>
+
+                      <fieldset class="mt-4">
+                        <legend class="h6 text-white-75">Address</legend>
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <label for="ind-country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="ind-country" name="address.country" value="Nigeria" autocomplete="country-name" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="ind-state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="ind-state" name="address.state" autocomplete="address-level1" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="ind-lga" class="form-label">LGA / Province</label>
+                            <input type="text" class="form-control" id="ind-lga" name="address.lgaOrProvince" autocomplete="address-level2" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="ind-street" class="form-label">Street address</label>
+                            <input type="text" class="form-control" id="ind-street" name="address.streetAddress" autocomplete="street-address" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <button type="submit" class="btn btn-brand px-4 mt-4">
+                        Submit application
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                      </button>
+                    </form>
+                  </div>
+
+                  <!-- Institution application -->
+                  <div class="tab-pane fade" id="institution-pane" role="tabpanel" aria-labelledby="institution-tab" tabindex="0">
+                    <p class="text-muted mb-4">
+                      For schools, universities, and organizations applying on behalf of their athletes.
+                    </p>
+                    <form id="institutionForm" class="registration-form" novalidate>
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label for="inst-name" class="form-label">Institution name</label>
+                          <input type="text" class="form-control" id="inst-name" name="name" autocomplete="organization" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inst-type" class="form-label">Institution type</label>
+                          <select class="form-select" id="inst-type" name="institutionType" required>
+                            <option value="" selected disabled>Choose…</option>
+                            <option value="PUBLIC_PRIMARY">Public primary school</option>
+                            <option value="PRIVATE_PRIMARY">Private primary school</option>
+                            <option value="PUBLIC_SECONDARY">Public secondary school</option>
+                            <option value="PRIVATE_SECONDARY">Private secondary school</option>
+                            <option value="UNIVERSITY">University</option>
+                            <option value="POLYTECHNIC">Polytechnic</option>
+                            <option value="COLLEGE_OF_EDUCATION">College of education</option>
+                            <option value="OTHER">Other</option>
+                          </select>
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inst-email" class="form-label">Contact email</label>
+                          <input type="email" class="form-control" id="inst-email" name="contactEmail" maxlength="254" autocomplete="email" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inst-phone" class="form-label">Contact phone</label>
+                          <input type="tel" class="form-control" id="inst-phone" name="contactPhone" placeholder="+234…" autocomplete="tel" required />
+                          <div class="invalid-feedback" aria-live="polite"></div>
+                        </div>
+                      </div>
+
+                      <fieldset class="mt-4">
+                        <legend class="h6 text-white-75">Address</legend>
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <label for="inst-country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="inst-country" name="address.country" value="Nigeria" autocomplete="country-name" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="inst-state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="inst-state" name="address.state" autocomplete="address-level1" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="inst-lga" class="form-label">LGA / Province</label>
+                            <input type="text" class="form-control" id="inst-lga" name="address.lgaOrProvince" autocomplete="address-level2" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="inst-street" class="form-label">Street address</label>
+                            <input type="text" class="form-control" id="inst-street" name="address.streetAddress" autocomplete="street-address" required />
+                            <div class="invalid-feedback" aria-live="polite"></div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <button type="submit" class="btn btn-brand px-4 mt-4">
+                        Submit application
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <p class="small text-muted mt-3 mb-0">
+                Have a general question instead? <a href="/contact.html">Contact us</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <button type="button" class="btn btn-dark btn-to-top shadow" id="toTop" aria-label="Back to top">↑</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

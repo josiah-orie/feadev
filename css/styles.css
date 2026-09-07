@@ -18,6 +18,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Bootstrap's default .text-muted (dark gray) is unreadable on the dark theme.
+   Override it with a light, accessible muted tone. */
+.text-muted {
+  color: var(--af-muted) !important;
+}
+
 body {
   font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: radial-gradient(1200px 900px at 20% -10%, rgba(31, 162, 255, 0.25), transparent 55%),
@@ -645,20 +651,61 @@ main a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
 
 .partner-logo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
 }
 .partner-logo-slot {
-  min-height: 88px;
+  min-height: 120px;
   display: grid;
   place-items: center;
-  padding: 0.75rem;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.55);
+  background: #fff;
   text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.partner-logo-slot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+.partner-logo-slot img {
+  max-width: 100%;
+  max-height: 84px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.featured-partner-card {
+  border-radius: 18px;
+}
+.featured-partner-logo {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+}
+.featured-partner-logo img {
+  max-width: 100%;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.featured-partner-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--af-brand), var(--af-brand2));
+  color: #0b1220;
 }
 
 .team-card {
@@ -1173,4 +1220,153 @@ main a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
 .event-registration-details ul li {
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+/* Academy registration page */
+.academy-reg-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--af-border);
+  box-shadow: var(--af-shadow);
+  flex: 0 0 auto;
+}
+
+/* Dark-theme tabs (Individual / Institution) */
+.form-card .nav-tabs {
+  border-bottom: 1px solid var(--af-border);
+}
+.form-card .nav-tabs .nav-link {
+  color: var(--af-muted);
+  border: 1px solid transparent;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-weight: 600;
+  background: transparent;
+}
+.form-card .nav-tabs .nav-link:hover {
+  color: var(--af-text);
+  border-color: rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12) var(--af-border);
+  background: rgba(255, 255, 255, 0.04);
+}
+.form-card .nav-tabs .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--af-border) var(--af-border) transparent;
+}
+
+/* Academy dual CTA on the academy page */
+.academy-apply-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.academy-overview-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--af-radius);
+  border: 1px solid var(--af-border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =====================================================================
+   Foundation Training Section — Trainer cards, gallery & lightbox
+   ===================================================================== */
+
+/* Banner image wrapper */
+.trainer-banner-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--af-radius);
+}
+.trainer-banner-img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  border-radius: var(--af-radius);
+  margin-bottom: 0;
+}
+
+/* Role badge */
+.trainer-role-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--af-brand), var(--af-brand2));
+  color: #0b1220;
+  margin-bottom: 0.5rem;
+}
+
+/* Trainer card — extends .team-card */
+.trainer-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Photo gallery strip */
+.trainer-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+/* Gallery trigger button — no chrome */
+.trainer-gallery-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  line-height: 0;
+}
+.trainer-gallery-btn:focus-visible {
+  outline: 2px solid var(--af-brand);
+  outline-offset: 2px;
+}
+
+/* Thumbnail image */
+.trainer-gallery-thumb {
+  height: 72px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 150ms ease, border-color 150ms ease;
+  display: block;
+}
+.trainer-gallery-btn:hover .trainer-gallery-thumb,
+.trainer-gallery-btn:focus-visible .trainer-gallery-thumb {
+  transform: scale(1.06);
+  border-color: var(--af-brand);
+}
+
+/* Lightbox modal overrides */
+.trainer-lightbox .modal-content {
+  background: #0b1220;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--af-radius);
+}
+.trainer-lightbox .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1.1rem 0.75rem;
+}
+.trainer-lightbox .modal-body {
+  padding: 0.75rem;
+  text-align: center;
+}
+.trainer-lightbox .modal-body img {
+  max-height: 80vh;
+  max-width: 100%;
+  border-radius: calc(var(--af-radius) - 4px);
+  object-fit: contain;
 }
